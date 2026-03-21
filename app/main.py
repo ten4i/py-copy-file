@@ -1,10 +1,10 @@
 def copy_file(command: str) -> None:
-    if command == "":
+    if not command.strip():
         return None
     parts = (command.strip()).split()
-    if parts[0] != "cp":
-        return None
     if len(parts) != 3:
+        return None
+    if parts[0] != "cp":
         return None
     file_in_name = parts[1]
     file_out_name = parts[2]
